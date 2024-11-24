@@ -5,6 +5,7 @@ import { connectDatabase } from './config/database';
 import { requestLogger, errorLogger, developmentLogger } from './services/logger.service';
 import authRoutes from './routes/auth.routes';
 import itemRoutes from './routes/item.routes';
+import { startScheduledTasks } from './util/scheduler';
 
 
 const app = express();
@@ -42,6 +43,9 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
         error: process.env.NODE_ENV === 'development' ? err.message : 'Internal Server Error'
     });
 });
+
+// Start the schedule task
+startScheduledTasks();
 
 // Connect to database and start server
 const startServer = async () => {
