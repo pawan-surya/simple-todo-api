@@ -110,3 +110,23 @@ export const updateItem = async (req: Request, res: Response) => {
     res.status(400).json({ error: 'Error updating todo item' });
   }
 };
+
+export const updateTodoAsCompleted = async (req: Request, res: Response) => {
+  try {
+    const todo = await Item.findOneAndUpdate( { _id: req.params.id, user: req.user._id },
+      { $set: { completed: true } },{ new: true });
+
+    if (!todo) {
+      res.status(404).json({ error: 'Todo item not found' });
+      return;
+    }
+
+    res.status(200).json({
+      message: 'Todo marked as completed.',
+      todo,
+    });
+  } catch (error) {
+    console.error('Error updating todo:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
