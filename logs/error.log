@@ -1,0 +1,15 @@
+POST /api/auth/signup 404 5.671 ms - {"email":"user1@mailinator.com","password":"password123"} - -
+POST /api/auth/signup 400 58.741 ms - {"email":"user1@mailinator.com","password":"password123"} - -
+POST /api/auth/signup 400 15.670 ms - {"email":"user1@mailinator.com","password":"password123"} - -
+POST /api/auth/signup 400 505.168 ms - {"email":"user1@mailinator.com","password":"password123"} - -
+POST /api/auth/signup 400 39.110 ms - {"email":"user1@mailinator.com","password":"password123"} - -
+POST /api/auth/signup 400 64.682 ms - {"email":"user2@mailinator.com","password":"password123"} - -
+POST /api/auth/login 401 168.395 ms - {"email":"user1@mailinator.com","password":"1"} - -
+POST /api/auth/login 401 171.902 ms - {"email":"user1@mailinator.com","password":"1"} - -
+POST /api/auth/login 401 10.044 ms - {"email":"user111@mailinator.com","password":"1"} - -
+POST /api/auth/login 401 172.503 ms - {"email":"user1@mailinator.com","password":"1"} - -
+POST /api/auth/login 401 214.901 ms - {"email":"user1@mailinator.com","password":"1"} - -
+POST /api/auth/login 401 126.189 ms - {"email":"user1@mailinator.com","password":"masterpassword123"} - -
+POST /api/auth/signup 400 7.096 ms - {"email":"user3@mailinator.com","password":"masterpassword123"} - -
+POST /api/auth/signup 400 1.984 ms - {"email":"user4@mailinator.com","password":"12"} - -
+POST /api/auth/signup 400 1.150 ms - {"email":"","password":""} - -
