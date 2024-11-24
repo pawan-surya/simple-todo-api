@@ -32,6 +32,6 @@ export const auth = async (req: Request, res: Response, next: NextFunction) => {
     req.user = user;
     next();
   } catch (error) {
-    res.status(401).json({ error: 'Please authenticate' });
+    res.status(401).json({ error: 'Authentication required. Please log in to continue.' });
   }
 }; 
