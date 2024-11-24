@@ -3,6 +3,7 @@ import cors from 'cors';
 import { config } from './config/config';
 import { connectDatabase } from './config/database';
 import { requestLogger, errorLogger, developmentLogger } from './services/logger.service';
+import authRoutes from './routes/auth.routes';
 
 
 const app = express();
@@ -17,6 +18,9 @@ if (process.env.NODE_ENV === 'development') {
 }
 app.use(requestLogger);
 app.use(errorLogger);
+
+// Routes
+app.use('/api/auth', authRoutes);
 
 // Store response body for logging
 app.use((req, res, next) => {
