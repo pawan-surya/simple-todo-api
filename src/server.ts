@@ -4,6 +4,7 @@ import { config } from './config/config';
 import { connectDatabase } from './config/database';
 import { requestLogger, errorLogger, developmentLogger } from './services/logger.service';
 import authRoutes from './routes/auth.routes';
+import itemRoutes from './routes/item.routes';
 
 
 const app = express();
@@ -21,6 +22,7 @@ app.use(errorLogger);
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/item', itemRoutes);
 
 // Store response body for logging
 app.use((req, res, next) => {
